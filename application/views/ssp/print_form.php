@@ -67,8 +67,8 @@
 
 </head>
 
-<body id="content" >
-    <div style="max-width: 610px; border: 1px solid black;">
+<body>
+    <div id="content" style="max-width: 610px; border: 1px solid black;">
         <div class="gridcontainer">
             <div class="gridchild" style="display: flex;">
                 <img src="<?php echo base_url()?>assets/images/logokemenkeu.png" style="height: 95px; width: auto;"/>
@@ -314,26 +314,25 @@
         $(document).ready(function(){
         
             $("#btnprint").click(function(){
-                var HTML_Width = $("#content").width();
-                var HTML_Height = $("#content").height();
-                var top_left_margin = 15;
-                var PDF_Width = HTML_Width + (top_left_margin * 2);
-                var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
-                var canvas_image_width = HTML_Width;
-                var canvas_image_height = HTML_Height;
 
-                var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-
-                html2canvas($("#content")[0]).then(function (canvas) {
+                html2canvas($("#content")[0],{
+                    scrollX: 0,
+                    scrollY: -window.scrollY
+                }).then(function (canvas) {
                     var imgData = canvas.toDataURL("image/jpeg", 1.0);
-                    var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-                    pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-                    for (var i = 1; i <= totalPDFPages; i++) { 
-                        pdf.addPage(PDF_Width, PDF_Height);
-                        pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
-                    }
-                    pdf.output('dataurlnewwindow');     //opens the data uri in new window
-                    //pdf.save("Your_PDF_Name.pdf");
+                    var doc = new jsPDF("p", "pt", "a4");
+
+                    var width = doc.internal.pageSize.getWidth();
+                    var height = doc.internal.pageSize.getHeight();
+                    doc.margins = {
+                        top: 40,
+                        bottom: 60,
+                        left: 40,
+                        width: 522
+                    };
+                    doc.addImage(imgData, 'PNG', 0, 0, width, height);
+                    //doc.output('dataurlnewwindow');     //opens the data uri in new window
+                    doc.save("Your_PDF_Name.pdf");
                 });
             })
         });
