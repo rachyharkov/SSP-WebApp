@@ -24,11 +24,7 @@
 				<tr><td>Keterangan</td><td><?php echo $keterangan; ?></td></tr>
 				<tr><td>Created</td><td><?php echo $created; ?></td></tr>
 				<tr><td>User Penginput</td><td><?php echo $user_id; ?></td></tr>
-				<tr><td></td><td><a href="<?php echo site_url('ssp') ?>" class="btn btn-default">Cancel</a></td>
-				<td><form action="<?php echo base_url()."ssp/pdf_preview"; ?>" role="form" method="post" enctype="multipart/form-data" autocomplete="off" style="float: right;">
-						<input type="hidden" name="tb_id" id="tb_id" value="<?php echo $ssp_id ?>">   
-						<button class="btn btn-primary" type="submit" formtarget="_blank"><i class='fa fa-file-word-o'></i> Print</button>
-					</form></td></tr>
+				<tr><td></td><td><a href="<?php echo site_url('ssp') ?>" class="btn btn-default">Cancel</a></td></tr>
 			</table>
         </body>
     </div>

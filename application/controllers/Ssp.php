@@ -259,9 +259,9 @@ class Ssp extends CI_Controller
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
-	public function pdf_preview() 
+	public function print($id) 
     {
-        $row = $this->Ssp_model->get_by_id($this->input->post('tb_id', TRUE));
+        $row = $this->Ssp_model->get_by_id($id);
         if ($row) {
             $data = array(
 			'ssp_id' => $row->ssp_id,
