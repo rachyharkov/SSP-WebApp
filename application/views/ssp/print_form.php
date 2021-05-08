@@ -30,6 +30,7 @@
         padding: 5px;
         width: 10px;
         text-align: center;
+        font-weight: bold;
     }
 
     .special-box-fill {
@@ -61,7 +62,31 @@
     body > div > div > div:nth-child(4) > table > tbody > tr > td:nth-child(3) > div.box-fill:nth-child(13) {
         margin-left: 14px;
     }
+
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(3) {
+        margin-left: 8px;   
+    }
+
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(5) {
+        margin-left: 8px;
+    }
+
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(8) {
+        margin-left: 8px;
+    }
+
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(11) {
+        margin-left: 8px;
+    }
     
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(14) {
+        margin-left: 8px;
+    }
+
+    #content > div > div:nth-child(5) > table > tbody > tr:nth-child(1) > td:nth-child(3) > div:nth-child(18) {
+        margin-left: 8px;
+    }
+
 
     </style>
 
@@ -71,7 +96,9 @@
     <div id="content" style="max-width: 610px; border: 1px solid black;">
         <div class="gridcontainer">
             <div class="gridchild" style="display: flex;">
-                <img src="<?php echo base_url()?>assets/images/logokemenkeu.png" style="height: 95px; width: auto;"/>
+                <img src="<?php echo base_url()?>assets/images/logokemenkeu.png" style="height: 74px;
+    width: auto;
+    margin: auto;"/>
                 <p style="font-size: 12px; text-align: center; margin: auto; font-weight: bold;">DEPARTEMEN KEUANGAN R.I <br>DIREKTORAT JENDERAL PAJAK</p>
             </div>
             <div class="gridchild" style="text-align: center;">
@@ -82,16 +109,19 @@
             </div>
             <div class="gridchild" style="position: relative;">
                 <p style="line-height: 4;
-                padding: 0 36px; font-weight: bold;">LEMBAR</p><div style="height: 27px;
+                padding: 0 21px; font-weight: bold;">LEMBAR</p><div style="height: 27px;
                 width: 27px;
                 border: 4px solid black;
                 padding: 3px;
-                margin-left: 12px;
                 position: absolute;
                 font-size: 23px;
                 top: 12px;
-                right: 15px;
+                right: 28px;
                 text-align: center;">1</div>
+                <p style="font-size: 11px;
+    position: absolute;
+    bottom: 7px;
+    left: 21px;">Untuk Arsip Wajib Pajak</p>
             </div>
             <div class="gridchild" style="grid-column-start: 1;
             grid-column-end: 4; padding: 23px 19px 12px 19px;">
@@ -136,10 +166,30 @@
             <div class="gridchild" style="grid-column-start: 1;
             grid-column-end: 4; padding: 23px 19px 12px 19px;">
                 <table style="font-size: 11px;">
+                <?php $nopdigits = str_split($nop); ?>
                     <tr>
                         <td style="width: 85px; font-weight: bold;">NOP</td>
                         <td>:</td>
-                        <td><?php echo $nop; ?></td>
+                        <td style="display: flex;">
+                            <div class="box-fill"><?php echo $nopdigits[0] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[1] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[2] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[3] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[4] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[5] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[6] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[7] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[8] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[9] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[10] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[11] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[12] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[13] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[14] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[15] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[16] ?></div>
+                            <div class="box-fill"><?php echo $nopdigits[17] ?></div>
+                        </td>
                     </tr>
                     <tr>
                         <td style="font-size: 9px; font-style: italic;" colspan="3">Diisi sesuai dengan Nomor Objek Pajak</td>
@@ -175,7 +225,8 @@
                 </div>
             </div>
             <div class="gridchild" style="grid-column-start: 2;grid-column-end: 4; padding: 10px; font-size: 11px;">
-                <p><span style="font-weight: bold;">Uraian Pembayaran </span> <span style="text-decoration: underline dotted;"><?php echo $uraian_pembayaran; ?></span></p>
+                <p style="font-weight: 500; margin: 0;">Uraian Pembayaran :</p> <p style="text-decoration: underline dotted;
+    font-weight: bold; margin: 0;"><?php echo $uraian_pembayaran; ?></p>
             </div>
             <div class="gridchild" style="text-align: center;grid-column-start: 1;
             grid-column-end: 3;padding: 0px 7px 5px 7px;">
@@ -196,20 +247,21 @@
                         <th>Des</th>
                     </tr>
                     <tr>
-                    <td><?php echo $masa_pajak == 1 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 2 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 3 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 4 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 5 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 6 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 7 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 8 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 9 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 10 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 11 ? 'X' : ''; ?></td>
-                    <td><?php echo $masa_pajak == 12 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 1 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 2 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 3 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 4 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 5 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 6 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 7 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 8 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 9 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 10 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 11 ? 'X' : ''; ?></td>
+                    <td style="font-size: 25px;font-weight: bold;"><?php echo $masa_pajak == 12 ? 'X' : ''; ?></td>
                     </tr>
                 </table>
+                <p style="margin: 2px 0; font-size: 9px; font-style: italic;" colspan="3">Beri tanda silang (x) pada kolom bulan, sesuai dengan pembayaran untuk masa yang berkenaan</p>
             </div>
             <div class="gridchild" style="text-align: center;padding: 0px 7px 5px 7px;">
                 <p style="font-size: 11px; font-weight: bold;">Tahun Pajak</p>
@@ -222,13 +274,14 @@
                         <td><?php echo $thpajakdigits[3]; ?></td>
                     </tr>
                 </table>
+                <p style="font-size: 11px; font-style: italic;">Diisi Tahun Terutangnya Pajak</p>
             </div>
             <div class="gridchild" style="grid-column-start: 1;
             grid-column-end: 4; padding: 23px 19px 12px 19px;">
                 <table style="font-size: 11px;">
                     <?php $noketetapandigits = str_split($no_ketetapan); ?>
                     <tr>
-                        <td style="width: 85px; font-weight: bold;">Nomor Keterangan</td>
+                        <td style="width: 85px; font-weight: bold;">Nomor Ketetapan</td>
                         <td>:</td>
                         <td style="display: flex;">
                             <div class="box-fill"><?php echo $noketetapandigits[0] ?></div>
@@ -270,14 +323,22 @@
                     <tr>
                         <td style="width: 30%; font-weight: bold;">Jumlah Pembayaran</td>
                         <td>:</td>
-                        <td>
-                            <?php echo rupiah($angka); ?>
+                        <td style="text-decoration: underline dotted;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;">
+                            <?php echo rupiah($angka); ?><span style="float: right;
+    font-weight: 300;
+    font-size: 11px;">Diisi dengan rupiah penuh</span>
                         </td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold;">Terbilang</td>
                         <td>:</td>
-                        <td>
+                        <td style="text-decoration: underline dotted;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;">
                             <?php echo rupiahterbilang($angka); ?> Rupiah
                         </td>
                     </tr>
@@ -301,7 +362,7 @@
             grid-column-end: 4;text-align: center; position: relative;">
                 <p style="font-size: 11px; margin-bottom: 2px;">" Terima kasih Telah Membayar Pajak-Pajak Untuk Pembangunan Bangsa "</p>
                 <p style="font-size: 11px; font-weight: bold; margin-top: 2px;">Ruang Validasi Kantor Penerima Pembayaran</p>
-                <p style="position: absolute; bottom: 2px; left: 2px;font-size: 11px;margin: 0;">F.2.03.NUMBER</p>
+                <p style="position: absolute; bottom: 2px; left: 2px;font-size: 11px;margin: 0;">F.2.0.32.01</p>
             </div>
         </div>
     </div>
@@ -331,6 +392,7 @@
                         width: 522
                     };
                     doc.addImage(imgData, 'PNG', 0, 0, width, height);
+                    
                     //doc.output('dataurlnewwindow');     //opens the data uri in new window
                     doc.save("Your_PDF_Name.pdf");
                 });
