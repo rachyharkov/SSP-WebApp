@@ -57,7 +57,7 @@
               </select></td>
           </tr>	    
         <tr><td width='200'>Uraian Pembayaran <?php echo form_error('uraian_pembayaran') ?></td><td> <textarea class="form-control" rows="3" name="uraian_pembayaran" id="uraian_pembayaran" placeholder="Uraian Pembayaran"><?php echo $uraian_pembayaran; ?></textarea></td></tr>
-	    <tr><td width='200'>No Ketetapan <?php echo form_error('no_ketetapan') ?></td><td><input type="text" class="form-control" name="no_ketetapan" id="no_ketetapan" placeholder="No Ketetapan" value="<?php echo $no_ketetapan; ?>" /></td></tr>
+	    <tr><td width='200'>No Ketetapan <?php echo form_error('no_ketetapan') ?></td><td><input type="text" class="form-control" name="no_ketetapan" id="no_ketetapan" placeholder="No Ketetapan" value="<?php echo $no_ketetapan; ?>" maxlength="15" /></td></tr>
 	    <tr><td width='200'>Jumlah Pembayan <?php echo form_error('jumlah_pembayan') ?></td><td><input type="text" class="form-control" name="jumlah_pembayan" id="jumlah_pembayan" placeholder="Jumlah Pembayan" value="<?php echo $jumlah_pembayan; ?>" /></td></tr>
 	    <tr><td width='200'>Lokasi Pelaporan <?php echo form_error('lokasi_pelaporan') ?></td><td><input type="text" class="form-control" name="lokasi_pelaporan" id="lokasi_pelaporan" placeholder="Lokasi Pelaporan" value="<?php echo $lokasi_pelaporan; ?>" /></td></tr>
 	    <tr><td width='200'>Tanggal <?php echo form_error('tanggal') ?></td><td><input type="date" class="form-control" name="tanggal" id="tanggal" placeholder="Tanggal" value="<?php echo $tanggal; ?>" /></td></tr>
