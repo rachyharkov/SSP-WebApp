@@ -655,20 +655,24 @@
                     scrollY: -window.scrollY
                 }).then((canvas)=> {
 
-                    var doc = new jsPDF("p", "pt", "a4");
-                    var imgData = canvas.toDataURL("image/jpeg", 1.5);
-                    var width = doc.internal.pageSize.getWidth();
-                    var height = doc.internal.pageSize.getHeight();
-                    doc.margins = {
-                        top: 40,
-                        bottom: 60,
-                        left: 40,
-                        width: 522
-                    };
-                    doc.addImage(imgData, 'JPEG', 0, 0, width, height);                    
-                    doc.addPage();    
-                    doc.addImage(imgData, 'JPEG', 0, 0, width, height); 
-                    doc.save("Your_PDF_Name.pdf");
+                    var imgData = canvas.toDataURL('image/png');
+                    var imgWidth = 210; 
+                    var pageHeight = 295;  
+                    var imgHeight = canvas.height * imgWidth / canvas.width;
+                    var heightLeft = imgHeight;
+                    var doc = new jsPDF('p', 'mm');
+                    var position = 10; // give some top padding to first page
+
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+
+                    while (heightLeft >= 0) {
+                      position += heightLeft - imgHeight; // top padding for other pages
+                      doc.addPage();
+                      doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                      heightLeft -= pageHeight;
+                    }
+                    doc.save( 'file.pdf');
                 });
                 
                 //doc.output('dataurlnewwindow');     //opens the data uri in new window
