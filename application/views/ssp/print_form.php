@@ -363,10 +363,8 @@
                 <p style="position: absolute; bottom: 2px; left: 2px;font-size: 11px;margin: 0;">F.2.0.32.01</p>
             </div>
         </div>
-    </div>
-
-    <div id="content2" class="content" style="max-width: 720px;padding: 11px;">
-        <div class="gridcontainer">
+        <br>
+        <div class="gridcontainer" style="margin-top: 200px;">
             <div class="gridchild" style="display: flex;">
                 <img src="<?php echo base_url()?>assets/images/logokemenkeu.png" style="height: 74px;
     width: auto;
@@ -665,7 +663,7 @@
 
                     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
                     heightLeft -= pageHeight;
-
+                    console.log(heightLeft);
                     while (heightLeft >= 0) {
                       position += heightLeft - imgHeight; // top padding for other pages
                       doc.addPage();
