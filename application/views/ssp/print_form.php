@@ -104,9 +104,6 @@
 
 <body>
     <div id="content1" class="content" style="max-width: 720px;padding: 11px;">
-        <?php 
-        for ($i=1; $i <= 3 ; $i++) { 
-        ?>
         
         <div class="gridcontainer">
             <div class="gridchild" style="display: flex;">
@@ -131,7 +128,7 @@
                 font-size: 23px;
                 top: 12px;
                 right: 28px;
-                text-align: center;"><?php echo $i; ?></div>
+                text-align: center;">1</div>
                 <p style="font-size: 11px;
     position: absolute;
     bottom: 7px;
@@ -144,22 +141,16 @@
                         <td style="width: 85px; font-weight: bold;">NPWP</td>
                         <td>:</td>
                         <td style="display: flex;">
-                        <?php $npwpdigits = str_split($npwp_wp); ?>
-                            <div class="box-fill"><?php echo $npwpdigits[0] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[1] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[2] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[3] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[4] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[5] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[6] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[7] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[8] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[9] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[10] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[11] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[12] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[13] ?></div>
-                            <div class="box-fill"><?php echo $npwpdigits[14] ?></div>
+                        <?php $npwpdigits = str_split($npwp_wp);
+                        $o = 0;
+                        foreach ($npwpdigits as $key => $vl) {
+                        
+                        ?>
+                            <div class="box-fill"><?php echo $npwpdigits[$o] ?></div>
+                          <?php  
+                          $o++;
+                        }
+                        ?>
                         </td>
                     </tr>
                     <tr>
@@ -185,24 +176,14 @@
                         <td style="width: 85px; font-weight: bold;">NOP</td>
                         <td>:</td>
                         <td style="display: flex;">
-                            <div class="box-fill"><?php echo $nopdigits[0] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[1] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[2] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[3] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[4] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[5] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[6] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[7] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[8] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[9] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[10] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[11] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[12] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[13] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[14] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[15] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[16] ?></div>
-                            <div class="box-fill"><?php echo $nopdigits[17] ?></div>
+                            <?php 
+                            $i = 0;
+                            foreach ($nopdigits as $key => $v) { ?>
+                                <div class="box-fill"><?php echo $nopdigits[$i] ?></div>
+                        
+                            <?php 
+                        $i++;
+                        } ?>
                         </td>
                     </tr>
                     <tr>
@@ -219,22 +200,29 @@
                 <div style="text-align: center;">
                     <p style="margin: 5px 0">Kode Akun Pajak</p>
                     <div style="display: flex;">
-                        <?php $kdakunpajakdigit = str_split($kode_akun_pajak); ?>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[0] ?></div>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[1] ?></div>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[2] ?></div>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[3] ?></div>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[4] ?></div>
-                        <div class="box-fill"><?php echo $kdakunpajakdigit[5] ?></div>
+                        <?php $kdakunpajakdigit = str_split($kode_akun_pajak);
+                            $p = 0;
+                            foreach ($kdakunpajakdigit as $key => $value) {
+                                ?>
+                                    <div class="box-fill"><?php echo $kdakunpajakdigit[$p]; ?></div>
+                                <?php
+                                $p++;
+                            }
+                        ?>
                     </div>
                 </div>
                 <div style="text-align: center;">
                     <p style="margin: 5px 0">Kode Jenis Setoran</p>
                     <div style="display: flex;place-content: center;">
-                    <?php $kdjenissetoran = str_split($kode_jenis_setoran); ?>
-                        <div class="box-fill"><?php echo $kdjenissetoran[0]; ?></div>
-                        <div class="box-fill"><?php echo $kdjenissetoran[1]; ?></div>
-                        <div class="box-fill"><?php echo $kdjenissetoran[2]; ?></div>
+                    <?php $kdjenissetoran = str_split($kode_jenis_setoran); 
+                    $x = 0;
+                        foreach ($kdjenissetoran as $key => $value) {
+                            ?>
+                                <div class="box-fill"><?php echo $kdjenissetoran[$x]; ?></div>
+                            <?php
+                            $x++;
+                        }
+                    ?>
                     </div>
                 </div>
             </div>
@@ -298,29 +286,40 @@
                         <td style="width: 85px; font-weight: bold;">Nomor Ketetapan</td>
                         <td>:</td>
                         <td style="display: flex;">
-                            <div class="box-fill"><?php echo $noketetapandigits[0] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[1] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[2] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[3] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[4] ?></div>
-                            <span style="line-height: 2;
+                            <?php
+                            $j = 0;
+                            foreach ($noketetapandigits as $key => $value) {
+                                ?>
+                                    <div class="box-fill"><?php echo $noketetapandigits[$j] ?></div>
+                                <?php
+                                if ($j == 4) {
+                                    ?>
+                                    <span style="line-height: 2;
                             padding: 0 4px;">/</span>
-                            <div class="box-fill"><?php echo $noketetapandigits[5] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[6] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[7] ?></div>
-                            <span style="line-height: 2;
+                                    <?php
+                                } 
+
+                                if ($j == 7) {
+                                    ?>
+                                        <span style="line-height: 2;
                             padding: 0 4px;">/</span>
-                            <div class="box-fill"><?php echo $noketetapandigits[8] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[9] ?></div>
-                            <span style="line-height: 2;
+                                    <?php
+                                } 
+                                if ($j == 9) {
+                                    ?>
+                                        <span style="line-height: 2;
                             padding: 0 4px;">/</span>
-                            <div class="box-fill"><?php echo $noketetapandigits[10] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[11] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[12] ?></div>
-                            <span style="line-height: 2;
+                                    <?php
+                                }
+                                if ($j == 12) {
+                                    ?>
+                                    <span style="line-height: 2;
                             padding: 0 4px;">/</span>
-                            <div class="box-fill"><?php echo $noketetapandigits[13] ?></div>
-                            <div class="box-fill"><?php echo $noketetapandigits[14] ?></div>
+                                    <?php
+                                }
+                                $j++;
+                            }
+                            ?>
                         </td>
                     </tr>
                     <tr>
@@ -379,10 +378,6 @@
                 <p style="position: absolute; bottom: 2px; left: 2px;font-size: 11px;margin: 0;">F.2.0.32.01</p>
             </div>
         </div>
-        
-        <?php 
-        }
-        ?>
         
     </div>
     <button id="btnprint">Print this Page</button>
